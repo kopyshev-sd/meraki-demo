@@ -83,4 +83,15 @@ public class OrgRestController {
                "    }\n" +
                "]\n";
     }
+
+    @GetMapping("/organizations")
+    public String getOrganizations() {
+        return "[\n" +
+               "    {\n" +
+               "        \"id\": \"2930418\",\n" +
+               "        \"name\": \"My organization\",\n" +
+               "        \"url\": \"https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview\"\n" +
+               "    }\n" +
+               "]";
+    }
 }
