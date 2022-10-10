@@ -11,79 +11,75 @@ public class OrgRestController {
 
     @GetMapping("/organizations/{id}/networks")
     public String getNetworks(@PathVariable String id) {
-        return """
-                [
-                    {
-                        "id": "N_24329156",
-                        "organizationId": "2930418",
-                        "name": "Main Office",
-                        "productTypes": [
-                            "appliance",
-                            "switch",
-                            "wireless"
-                        ],
-                        "timeZone": "America/Los_Angeles",
-                        "tags": [ "tag1", "tag2" ],
-                        "enrollmentString": "my-enrollment-string",
-                        "url": "https://n1.meraki.com//n//manage/nodes/list",
-                        "notes": "Additional description of the network",
-                        "isBoundToConfigTemplate": false
-                    },
-                    
-                    {
-                        "id": "N_24329156",
-                        "organizationId": "2930418",
-                        "name": "Main Office",
-                        "productTypes": [
-                            "appliance",
-                            "switch",
-                            "wireless"
-                        ],
-                        "timeZone": "America/Los_Angeles",
-                        "tags": [ "tag1", "tag2" ],
-                        "enrollmentString": "my-enrollment-string",
-                        "url": "https://n1.meraki.com//n//manage/nodes/list",
-                        "notes": "Additional description of the network",
-                        "isBoundToConfigTemplate": false
-                    }
-                ]
-                """;
+        return "[\n" +
+               "    {\n" +
+               "        \"id\": \"N_24329156\",\n" +
+               "        \"organizationId\": \"2930418\",\n" +
+               "        \"name\": \"Main Office\",\n" +
+               "        \"productTypes\": [\n" +
+               "            \"appliance\",\n" +
+               "            \"switch\",\n" +
+               "            \"wireless\"\n" +
+               "        ],\n" +
+               "        \"timeZone\": \"America/Los_Angeles\",\n" +
+               "        \"tags\": [ \"tag1\", \"tag2\" ],\n" +
+               "        \"enrollmentString\": \"my-enrollment-string\",\n" +
+               "        \"url\": \"https://n1.meraki.com//n//manage/nodes/list\",\n" +
+               "        \"notes\": \"Additional description of the network\",\n" +
+               "        \"isBoundToConfigTemplate\": false\n" +
+               "    },\n" +
+               "\n" +
+               "    {\n" +
+               "        \"id\": \"N_24329156\",\n" +
+               "        \"organizationId\": \"2930418\",\n" +
+               "        \"name\": \"Main Office\",\n" +
+               "        \"productTypes\": [\n" +
+               "            \"appliance\",\n" +
+               "            \"switch\",\n" +
+               "            \"wireless\"\n" +
+               "        ],\n" +
+               "        \"timeZone\": \"America/Los_Angeles\",\n" +
+               "        \"tags\": [ \"tag1\", \"tag2\" ],\n" +
+               "        \"enrollmentString\": \"my-enrollment-string\",\n" +
+               "        \"url\": \"https://n1.meraki.com//n//manage/nodes/list\",\n" +
+               "        \"notes\": \"Additional description of the network\",\n" +
+               "        \"isBoundToConfigTemplate\": false\n" +
+               "    }\n" +
+               "]\n";
     }
 
     @GetMapping("/organizations/{id}/uplinks/statuses")
     public String getDeviceStatuses(@PathVariable int id) {
-        return """
-                [
-                    {
-                        "networkId": "N_24329156",
-                        "serial": "Q234-ABCD-5678",
-                        "model": "MX68C",
-                        "lastReportedAt": "2018-02-11T00:00:00Z",
-                        "uplinks": [
-                            {
-                                "interface": "wan1",
-                                "status": "active",
-                                "ip": "1.2.3.4",
-                                "gateway": "1.2.3.5",
-                                "publicIp": "123.123.123.1",
-                                "primaryDns": "8.8.8.8",
-                                "secondaryDns": "8.8.4.4",
-                                "ipAssignedBy": "static",
-                                "provider": "at&t",
-                                "signalStat": {
-                                    "rsrp": "-120",
-                                    "rsrq": "-13"
-                                },
-                                "connectionType": "4g",
-                                "apn": "internet",
-                                "dns1": "111.111.111.111",
-                                "dns2": "222.222.222.222",
-                                "signalType": "4G",
-                                "iccid": "123456789"
-                            }
-                        ]
-                    }
-                ]
-                """;
+        return "[\n" +
+               "    {\n" +
+               "        \"networkId\": \"N_24329156\",\n" +
+               "        \"serial\": \"Q234-ABCD-5678\",\n" +
+               "        \"model\": \"MX68C\",\n" +
+               "        \"lastReportedAt\": \"2018-02-11T00:00:00Z\",\n" +
+               "        \"uplinks\": [\n" +
+               "            {\n" +
+               "                \"interface\": \"wan1\",\n" +
+               "                \"status\": \"active\",\n" +
+               "                \"ip\": \"1.2.3.4\",\n" +
+               "                \"gateway\": \"1.2.3.5\",\n" +
+               "                \"publicIp\": \"123.123.123.1\",\n" +
+               "                \"primaryDns\": \"8.8.8.8\",\n" +
+               "                \"secondaryDns\": \"8.8.4.4\",\n" +
+               "                \"ipAssignedBy\": \"static\",\n" +
+               "                \"provider\": \"at&t\",\n" +
+               "                \"signalStat\": {\n" +
+               "                    \"rsrp\": \"-120\",\n" +
+               "                    \"rsrq\": \"-13\"\n" +
+               "                },\n" +
+               "                \"connectionType\": \"4g\",\n" +
+               "                \"apn\": \"internet\",\n" +
+               "                \"dns1\": \"111.111.111.111\",\n" +
+               "                \"dns2\": \"222.222.222.222\",\n" +
+               "                \"signalType\": \"4G\",\n" +
+               "                \"iccid\": \"123456789\"\n" +
+               "            }\n" +
+               "        ]\n" +
+               "    }\n" +
+               "]\n";
     }
 }
