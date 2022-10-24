@@ -175,4 +175,58 @@ public class NetRestController {
                "    }\n" +
                "]\n";
     }
+
+    @GetMapping("/networks/{id}/appliance/vlans")
+    public String getVLANs(@PathVariable String id) {
+        return "[\n" +
+                "    {\n" +
+                "        \"name\": \"My VLAN\",\n" +
+                "        \"subnet\": \"192.168.1.0/24\",\n" +
+                "        \"applianceIp\": \"192.168.1.2\",\n" +
+                "        \"groupPolicyId\": \"101\",\n" +
+                "        \"templateVlanType\": \"same\",\n" +
+                "        \"cidr\": \"192.168.1.0/24\",\n" +
+                "        \"mask\": 28,\n" +
+                "        \"dhcpRelayServerIps\": [\n" +
+                "            \"192.168.1.0/24\",\n" +
+                "            \"192.168.128.0/24\"\n" +
+                "        ],\n" +
+                "        \"dhcpHandling\": \"Run a DHCP server\",\n" +
+                "        \"dhcpLeaseTime\": \"1 day\",\n" +
+                "        \"dhcpBootOptionsEnabled\": false,\n" +
+                "        \"dhcpBootNextServer\": \"1.2.3.4\",\n" +
+                "        \"dhcpBootFilename\": \"sample.file\",\n" +
+                "        \"reservedIpRanges\": [\n" +
+                "            {\n" +
+                "                \"start\": \"192.168.1.0\",\n" +
+                "                \"end\": \"192.168.1.1\",\n" +
+                "                \"comment\": \"A reserved IP range\"\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"dnsNameservers\": \"google_dns\",\n" +
+                "        \"dhcpOptions\": [\n" +
+                "            {\n" +
+                "                \"code\": \"5\",\n" +
+                "                \"type\": \"text\",\n" +
+                "                \"value\": \"five\"\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"vpnNatSubnet\": \"192.168.1.0/24\",\n" +
+                "        \"ipv6\": {\n" +
+                "            \"enabled\": true,\n" +
+                "            \"prefixAssignments\": [\n" +
+                "                {\n" +
+                "                    \"autonomous\": false,\n" +
+                "                    \"staticPrefix\": \"2001:db8:3c4d:15::/64\",\n" +
+                "                    \"staticApplianceIp6\": \"2001:db8:3c4d:15::1\",\n" +
+                "                    \"origin\": {\n" +
+                "                        \"type\": \"internet\",\n" +
+                "                        \"interfaces\": [ \"wan0\" ]\n" +
+                "                    }\n" +
+                "                }\n" +
+                "            ]\n" +
+                "        }\n" +
+                "    }\n" +
+                "]";
+    }
 }
