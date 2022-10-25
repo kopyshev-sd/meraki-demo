@@ -229,4 +229,21 @@ public class NetRestController {
                 "    }\n" +
                 "]";
     }
+
+    @GetMapping("/networks/{id}/settings")
+    public String getNetworkSettings(@PathVariable String id) {
+        return "{\n" +
+                "    \"localStatusPageEnabled\": true,\n" +
+                "    \"remoteStatusPageEnabled\": true,\n" +
+                "    \"localStatusPage\": {\n" +
+                "        \"authentication\": {\n" +
+                "            \"enabled\": false,\n" +
+                "            \"username\": \"admin\"\n" +
+                "        }\n" +
+                "    },\n" +
+                "    \"secureConnect\": { \"enabled\": false },\n" +
+                "    \"fips\": { \"enabled\": true },\n" +
+                "    \"namedVlans\": { \"enabled\": true }\n" +
+                "}";
+    }
 }
